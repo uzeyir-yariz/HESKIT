@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kira Artış Oranı Hesaplama</title>
+</head>
+<body>
+	<h1>Kira Artış Oranı Hesaplama</h1>
+	<form>
+		<label for="referansEnflasyon">Referans Enflasyon Oranı:</label>
+		<input type="number" id="referansEnflasyon" name="referansEnflasyon"><br><br>
+
+		<label for="bazYilEnflasyon">Baz Yıl Enflasyon Oranı:</label>
+		<input type="number" id="bazYilEnflasyon" name="bazYilEnflasyon"><br><br>
+
+		<button type="button" onclick="hesapla()">Hesapla</button>
+	</form>
+
+	<p id="sonuc"></p>
+
+	<script>
+		function hesapla() {
+			// Kullanıcının girdiği değerler
+			var referansEnflasyonOrani = parseFloat(document.getElementById("referansEnflasyon").value);
+			var bazYilEnflasyonOrani = parseFloat(document.getElementById("bazYilEnflasyon").value);
+
+			// Kira artış oranı hesaplama
+			var kiraArtisOrani = ((referansEnflasyonOrani / bazYilEnflasyonOrani) - 1) * 100;
+
+			// Sonucu ekrana yazdırma
+			document.getElementById("sonuc").innerHTML = "Kira artış oranı: %" + kiraArtisOrani.toFixed(2);
+		}
+	</script>
+</body>
+</html>

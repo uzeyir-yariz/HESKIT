@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Tarih Farkı Hesaplama</title>
+  </head>
+  <body>
+    <h1>Tarih Farkı Hesaplama</h1>
+    <p>
+      <label for="tarih1">Tarih 1:</label>
+      <input type="datetime-local" id="tarih1">
+    </p>
+    <p>
+      <label for="tarih2">Tarih 2:</label>
+      <input type="datetime-local" id="tarih2">
+    </p>
+    <p>
+      <button onclick="hesapla()">Hesapla</button>
+    </p>
+    <p>
+      <span id="farkGun"></span> gün
+      <span id="farkSaat"></span> saat
+      <span id="farkDakika"></span> dakika
+      <span id="farkSaniye"></span> saniye
+    </p>
+    <script>
+      function hesapla() {
+        var tarih1 = new Date(document.getElementById("tarih1").value);
+        var tarih2 = new Date(document.getElementById("tarih2").value);
+        var fark = Math.abs(tarih2 - tarih1);
+        var farkGun = Math.floor(fark / (1000 * 60 * 60 * 24));
+        var farkSaat = Math.floor((fark % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var farkDakika = Math.floor((fark % (1000 * 60 * 60)) / (1000 * 60));
+        var farkSaniye = Math.floor((fark % (1000 * 60)) / 1000);
+        document.getElementById("farkGun").innerHTML = farkGun;
+        document.getElementById("farkSaat").innerHTML = farkSaat;
+        document.getElementById("farkDakika").innerHTML = farkDakika;
+        document.getElementById("farkSaniye").innerHTML = farkSaniye;
+      }
+    </script>
+  </body>
+</html>
