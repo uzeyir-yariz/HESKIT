@@ -11,7 +11,6 @@
 
 body{
     background-color: black;
-    height: 100vh;
 }
 
 h1,h2,h3,h4,h5,h6,a{
@@ -94,14 +93,14 @@ form > div{
 
 /* footer stage */
 footer{
+    justify-content: space-around;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 10px;
+    width: 100%;
     align-items: baseline;
     gap: 75px;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
+
     padding: 2rem;
     background-color: var(--dark-gray);
     border-radius: 25px;
