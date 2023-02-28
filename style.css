@@ -6,7 +6,14 @@
 
 :root{
     --dark-gray: rgb(34, 34, 34);
-    --light-green: #8ffd00;
+    --height-green: #8ffd00;
+    --light-green: #03C988;
+    --sky-blue: #8FD6E1;
+    --retro-orange: #FA7D09;
+    --height-blue: #00ADB5;
+    --soft-blue: #B5D5C5;
+    --soft-purple: #7286D3;
+    --height-orange: #FC7300;
 }
 
 body{
@@ -61,60 +68,59 @@ main{
     padding: 2rem;
 }
 
-form{
+.cards{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.card{
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    gap: 20px;
     background-color: var(--dark-gray);
-    border: solid azure 2px;
-    border-radius: 50px;
-    padding: 2rem;
-    width: fit-content;
-}
-
-form > div{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-/*  class
-
-    - text > label 
-    - inp > input
-    - btn > button
-*/
-.inp{
-    background-color: black;
-    color: var(--light-green);
-}
-
-.text{
-    color: azure;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.btn{
-    color: var(--light-green);
-    background-color: var(--dark-gray);
+    padding: 1rem;
     border-radius: 25px;
-    padding: 0.5rem;
-    text-transform: uppercase;
-    transition: 500ms;
+    border: 2px solid azure;
+    width: 30%;
+    text-align: center;
 }
-.btn:hover{
-    background-color: #fff;
-    padding-top:    15px;
-    padding-bottom: 15px;
-    color: black;
+
+.card > p{
+    border-bottom: 1px azure solid;
+    border-top: 1px azure solid;
+    padding: 10px;
+    color: var(--retro-orange);
 }
+
+.card > div{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    column-gap: 25px;
+}
+
+.card > h5{
+    color: #8ffd00;
+}
+
+.new{
+    position: relative;
+    transform: rotate(-25deg);
+    color: var(--height-blue);
+    margin-right: 100%;
+    margin-top: 5px;
+}
+
+
 /* footer stage */
 footer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 10px;
-    align-items: baseline;
-    gap: 75px;
-    position: absolute;
-    width: 100%;
     bottom: 0;
+    align-items: center;
     padding: 2rem;
     background-color: var(--dark-gray);
     border-radius: 25px;
@@ -143,6 +149,6 @@ footer > div{
     border-radius: 10px;
     padding: 5px;
 
-    color: var(--light-green);
+    color: var(--height-green);
 }
 

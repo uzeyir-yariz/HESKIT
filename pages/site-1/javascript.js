@@ -1,65 +1,93 @@
-function hesapla(){
-    let yillist = document.getElementById("yil_list");
+window.onload = function(){
+    aydoldur();
+    yildoldur();
+}
+
+function kont(){
+    let txt = document.getElementById("kira").value;
+    if(txt == ""){
+        alert("KİRA BÖLÜMÜNÜ BOŞ BIRAKTINIZ");
+    }
+
+    else if(txt <= 800){
+        alert("hmm...");
+        hesaplama();
+    }
+
+    else if(txt >= 100000){
+        alert("!!!");
+        hesaplama();
+    }
+
+    else{
+        hesaplama();
+    }
+}
+
+function hesaplama(){
+    let YIL, AY, AYFark, YILFark, Mkira, Ykira;
+
+    // değişkenleri seç
+    let yilList = document.getElementById("yil_list");
+    let ayList = document.getElementById("ay_list");
+    let kirabedeli = document.getElementById("kira").value;
+    let simdikiTarih = new Date();
+
+    // seçilen yıl ve ay değerlerini al
+    YIL = parseInt(yilList.options[yilList.selectedIndex].value);
+    AY = parseInt(ayList.options[ayList.selectedIndex].value);
+
+    // ay ve yıl farkını hesapla
+    AYFark = simdikiTarih.getMonth() + 1 - AY;
+    YILFark = simdikiTarih.getFullYear() - YIL;
+
+    // kira artışı hesapla
+    if (YILFark >= 5) {
+        Mkira = kirabedeli * 1.5;
+    } else {
+        Mkira = kirabedeli * 1.25;
+    }
+
+    // zam oranını ay bazında hesapla
+    Ykira = Mkira / 12;
+    Ykira = Ykira.toFixed(2); // virgülden sonra 2 basamak kullan
+
+    // sonuçları yazdır
+    document.getElementById("sonuc").innerHTML = "Kira Bedeli: " + kirabedeli + " TL<br><br>" + "Yeni Kira Bedeli: " + Mkira.toFixed(2) + " TL<br><br>" + "Aylık Artış: " + Ykira + " TL";
 }
 
 
 
 
 
+function aydoldur(){
+    /* bu kodlar ay bölümünü dolduracaktır */
 
+    // değerler
+    let aylar = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
+    let ayList = document.getElementById("ay_list")
 
+    for(let i = 0; i < aylar.length; i++){
+        let option = document.createElement("option");
+        option.text = aylar[i];
+        option.value = i + 1;
+        ayList.add(option);
+    }
+}
 
+function yildoldur(){
+    /* bu kodlar yıl bölümünü doldurmaktadır */
 
+    // değerler
+    let yilList = document.getElementById("yil_list");
+    let simdikiTarih = new Date();
+    let nowdate = simdikiTarih.getFullYear();
 
-
-
-
-
-
-
-
-
-// // hesaplama bölümü 
-// // 5 yıldan fazla kirada ise %50 zam yapabilir 
-// // 5 yıldan az kirada ise %25 zam yapabilir
-
-// function hesapla(){
-//     // değişkenler
-    
-//     var yilList = document.getElementById("yil_list");
-//     let select_yil = yilList.options[yilList.selectedIndex].value;
-//     // console.log(selectyil); [çalışıyor :D]
-
-//     var ayList = document.getElementById("ay_list");
-//     let select_ay = ayList.options[ayList.selectedIndex].value;
-//     // console.log(select_ay); [çalışıyor :D]
-
-//     const now = new Date();
-//     const YIL = now.getFullYear();
-//     const AY = now.getMonth() + 1;
-//     // console.log(YIL); [çalışıyor :D]
-//     // console.log(AY); [çalışıyor :D]
-//     // var topYil = select_yil - YIL;
-//     // var topAy = select_ay - AY;
-//     // var fark = topAy + (topYil * 12);
-
-//     let mevcutkira,yenikira;
-
-//     mevcutkira = documnet.getElementById("kira").value; 
-    
-    
-    
-//     /*
-//     if(fark >= 60){
-//         console.log("hello world");
-//     }
-
-//     else if(fark < 60 && fark >= 12){
-//         console.log("hello world");
-//     }
-
-//     else{
-//         console.log("bu terslikte bir iş var");
-//     }
-//     */
-// }
+    // doldurma bölümü
+    for(let i = nowdate; i >= 2000; i--){
+        let option = document.createElement("option");
+        option.text = i;
+        option.value = i;
+        yilList.add(option);
+    }
+}

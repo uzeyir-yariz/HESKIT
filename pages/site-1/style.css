@@ -58,6 +58,7 @@ nav > ul{
 /* main stage */
 main{
     padding: 2rem;
+    
 }
 
 form{
@@ -106,6 +107,7 @@ form > div{
     padding-top:    15px;
     padding-bottom: 15px;
     color: black;
+    cursor: pointer;
 }
 /* footer stage */
 footer{
