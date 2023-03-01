@@ -3,10 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 :root{
     --dark-gray: rgb(34, 34, 34);
-    --light-green: #8ffd00;
+    --height-green: #8ffd00;
+    --light-green: #03C988;
+    --sky-blue: #8FD6E1;
+    --retro-orange: #FA7D09;
+    --height-blue: #00ADB5;
+    --soft-blue: #B5D5C5;
+    --soft-purple: #7286D3;
+    --height-orange: #FC7300;
 }
 
 body{

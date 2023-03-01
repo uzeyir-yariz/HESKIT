@@ -1,6 +1,5 @@
 window.onload = function(){
-    aydoldur();
-    yildoldur();
+    doldur();
 }
 
 function kont(){
@@ -44,8 +43,10 @@ function hesaplama(){
     // kira artışı hesapla
     if (YILFark >= 5) {
         Mkira = kirabedeli * 1.5;
-    } else {
+    }else if(YILFark <= 5) {
         Mkira = kirabedeli * 1.25;
+    }else if(YILFark == 0){
+        
     }
 
     // zam oranını ay bazında hesapla
@@ -60,7 +61,8 @@ function hesaplama(){
 
 
 
-function aydoldur(){
+
+function doldur(){
     /* bu kodlar ay bölümünü dolduracaktır */
 
     // değerler
@@ -73,12 +75,7 @@ function aydoldur(){
         option.value = i + 1;
         ayList.add(option);
     }
-}
 
-function yildoldur(){
-    /* bu kodlar yıl bölümünü doldurmaktadır */
-
-    // değerler
     let yilList = document.getElementById("yil_list");
     let simdikiTarih = new Date();
     let nowdate = simdikiTarih.getFullYear();
