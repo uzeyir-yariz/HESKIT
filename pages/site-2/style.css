@@ -3,10 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 :root{
     --dark-gray: rgb(34, 34, 34);
-    --light-green: #8ffd00;
+    --height-green: #8ffd00;
+    --light-green: #03C988;
+    --sky-blue: #8FD6E1;
+    --retro-orange: #FA7D09;
+    --height-blue: #00ADB5;
+    --soft-blue: #B5D5C5;
+    --soft-purple: #7286D3;
+    --height-orange: #FC7300;
 }
 
 body{
@@ -58,7 +64,6 @@ nav > ul{
 /* main stage */
 main{
     padding: 2rem;
-    
 }
 
 form{
@@ -70,14 +75,11 @@ form{
     border-radius: 50px;
     padding: 2rem;
     width: fit-content;
-
-    gap: 15px;
 }
 
 form > div{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    text-align: right;
 }
 /*  class
 
@@ -107,7 +109,6 @@ form > div{
     padding-top:    15px;
     padding-bottom: 15px;
     color: black;
-    cursor: pointer;
 }
 /* footer stage */
 footer{
@@ -147,6 +148,6 @@ footer > div{
     border-radius: 10px;
     padding: 5px;
 
-    color: var(--light-green);
+    color: var(--height-green);
 }
 

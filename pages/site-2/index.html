@@ -5,44 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="javascript.js"></script>
-    <title>kira artış oranı</title>
+    <script src="js.js"></script>
+    <title>Document</title>
 </head>
 <body>
     <nav>
         <a href=""><img src="" alt="LOGO"></a>
         <ul>
-            <li><a class="nav-link" href="../../index.html"> Ana Sayfa </a></li>
+            <li><a class="nav-link" href="../../index.html"> ana sayfa </a></li>
             <li><a class="nav-link" href="../site-1/index.html"> kira ortalama </a></li>
             <li><a class="nav-link" href="../site-2/index.html"> şifre oluşturucu </a></li>
         </ul>
     </nav>
 
     <main>
-        <h3>kira artış oranı hesaplama</h3>
+        <h3>şifre oluşturucu</h3>
         <form action="">
             <div>
-                <label class="text" for="ev oturma yıl">evde oturmaya başladığı yıl : </label>
-                <select class="inp" name="yil_list" id="yil_list">
-                    <!-- js -->
-                </select>
-            </div>
-            
-            <div>
-                <label class="text" for="ev oturma ay">evde oturmaya başladığı ay :</label>
-                <select class="inp" name="ay_list" id="ay_list">
-                    <!-- js -->
-                </select>
+                <label for=""><strong style="color: red;">*</strong>Doldurulması gerekli alanlar</label>
             </div>
 
             <div>
-                <label class="text" for="en son ödediği kira">en son ödediğiniz kira :</label>
-                <input class="inp" type="number" name="tutar" id="kira">
+                <label for="şifre uzunluğu"><strong style="color: red;">*</strong>Şifre uzunluğu</label>
+                <!-- onKeyPress="if(this.value.length == 2) return false;" -->
+                <input type="number" min="1" max="8" id="pass" value="8" onKeyPress="if(this.value.length == 2) return false;">
             </div>
 
-            <input class="btn" type="button" onclick="kont()" value="hesapla">
-            <h3 id="sonuc"></h3>
-            <h3 id="ay_sonuc"></h3>
+            <div>
+                <label for="küçük harfler">küçük harfler</label>
+                <input type="checkbox" name="küçük harfler" id="SmalTxt" checked>
+            </div>
+
+            <div>
+                <label for="büyük harfler">büyük harfler</label>
+                <input type="checkbox" name="büyük harfler" id="BigTxt">
+            </div>
+
+            <div>
+                <label for="sayılar">sayılar</label>
+                <input type="checkbox" name="sayılar" id="Number">
+            </div>
+
+            <div>
+                <label for="diğer karakterler">diğer karakterler</label>
+                <input type="checkbox" name="karakterler" id="char">
+            </div>
+
+            <input type="button" value="hesapla" onclick="hesapla()">
         </form>
     </main>
 
@@ -55,7 +64,7 @@
         <div>
             <h5 class="fotH5">hello world</h5>
             <ul class="fotUl">
-                <li><a href="index.html">> KOA </a></li>
+                <li><a href="#">> link </a></li>
                 <li><a href="#">> link </a></li>
                 <li><a href="#">> link </a></li>
             </ul>
