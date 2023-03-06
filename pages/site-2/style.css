@@ -75,14 +75,44 @@ form{
     border-radius: 50px;
     padding: 2rem;
     width: fit-content;
+    gap: 5px;
 }
 
 form > div{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+#pass{margin-bottom: 15px;}
+#result{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    margin-top: 10px;
+    text-transform: none;
+    background-color: var(--soft-purple);
+    border: solid azure 2px;
+    border-radius: 25px;
+    padding: 7px;
+}
+#copy{
+    display: flex;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: azure;
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+    text-transform: none;
+    background-color: var(--soft-purple);
+    border: solid azure 2px;
+    border-radius: 25px;
+    padding: 7px;
 }
 /*  class
-
+    👍
     - text > label 
     - inp > input
     - btn > button
@@ -103,11 +133,10 @@ form > div{
     padding: 0.5rem;
     text-transform: uppercase;
     transition: 500ms;
+    margin-top: 15px;
 }
 .btn:hover{
     background-color: #fff;
-    padding-top:    15px;
-    padding-bottom: 15px;
     color: black;
 }
 /* footer stage */

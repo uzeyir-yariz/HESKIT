@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="js.js"></script>
-    <title>Document</title>
+    <title>şifre oluşturucu</title>
 </head>
 <body>
     <nav>
@@ -21,43 +21,46 @@
     <main>
         <h3>şifre oluşturucu</h3>
         <form action="">
-            <div>
-                <label for=""><strong style="color: red;">*</strong>Doldurulması gerekli alanlar</label>
-            </div>
+            
 
             <div>
-                <label for="şifre uzunluğu"><strong style="color: red;">*</strong>Şifre uzunluğu</label>
+                <label class="text" for="şifre uzunluğu"><strong style="color: red;">*</strong>Şifre uzunluğu</label>
                 <!-- onKeyPress="if(this.value.length == 2) return false;" -->
-                <input type="number" min="1" max="8" id="pass" value="8" onKeyPress="if(this.value.length == 2) return false;">
+                <input class="inp" type="number" min="1" max="8" id="pass" value="8" onKeyPress="if(this.value.length == 2) return false;">
             </div>
 
             <div>
-                <label for="küçük harfler">küçük harfler</label>
+                <label class="text" for="küçük harfler">küçük harfler</label>
                 <input type="checkbox" name="küçük harfler" id="SmalTxt" checked>
             </div>
 
             <div>
-                <label for="büyük harfler">büyük harfler</label>
+                <label class="text" for="büyük harfler">büyük harfler</label>
                 <input type="checkbox" name="büyük harfler" id="BigTxt">
             </div>
 
             <div>
-                <label for="sayılar">sayılar</label>
+                <label class="text" for="sayılar">sayılar</label>
                 <input type="checkbox" name="sayılar" id="Number">
             </div>
 
             <div>
-                <label for="diğer karakterler">diğer karakterler</label>
+                <label class="text" for="diğer karakterler">diğer karakterler</label>
                 <input type="checkbox" name="karakterler" id="char">
             </div>
 
-            <input type="button" value="hesapla" onclick="hesapla()">
+            <input class="btn" type="button" value="hesapla" onclick="hesapla()">
+
+            <h3 id="result"></h3>
+            <input id="copy" type="button" value="hello">
+
         </form>
+
     </main>
 
     <footer>
         <div>
-            <h5 class="fotH5">hello world</h5>
+            <h5 class="fotH5">hakkımızda</h5>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, reprehenderit!</p>
         </div>
 

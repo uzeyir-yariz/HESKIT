@@ -1,47 +1,40 @@
 // küçük harflere dikkat et
 function hesapla(){
-    let pasword_lenght = document.getElementById("pass").value;
+    let passwordLength = document.getElementById("pass").value;
+    let includeLowercase = document.getElementById("SmalTxt").checked;
+    let includeUppercase = document.getElementById("BigTxt").checked;
+    let includeNumbers = document.getElementById("Number").checked;
+    let includeSpecialChars = document.getElementById("char").checked;
 
-    let smal_text = document.getElementById("SmalTxt").checked;
-    let big_text = document.getElementById("BigTxt").checked; 
-    let number = document.getElementById("Number").checked; 
-    let chart = document.getElementById("char").checked;
-
-    let password_chart = "";
-
-
-
-    // if(smal_text == true && big_text == false && ){}
-
-
-    // if(smal_text == true){
-    //     password_chart = "abcdefghijklmnopqrstuvwxyz";
-    // }
+    let passwordChart = "";
     
-    // else if(big_text == true){
-    //     if(big_text == true && smal_text == true){password_chart = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";} 
+    if (includeLowercase) {
+      passwordChart += "abcdefghijklmnopqrstuvwxyz";
+    }
 
-    //     else{password_chart = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";}
-    // }
-    
-    // else if(number == true){
-        
-    //     if(number == true && smal_text == true && big_text == true){password_chart = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";}
-    //     else if(number == true && smal_text == true && big_text == false){password_chart = "abcdefghijklmnopqrstuvwxyz0123456789";}
-    //     else if(number == false && smal_text == true && big_text == false){password_chart = "abcdefghijklmnopqrstuvwxyz";}
-        
-    //     else{password_chart = "0123456789";}
+    if (includeUppercase) {
+      passwordChart += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    }
 
-    // }
-    
-    // else if(chart == true){
-    //     password_chart = ";,:.-_()%^&+!{}?@";
-    // }
-    
-    // else{alert("her hangi bir hata oluştu lütfen iletişime geçin");}
+    if (includeNumbers) {
+      passwordChart += "0123456789";
+    }
 
+    if (includeSpecialChars) {
+      passwordChart += ";,:.-_()%^&+!{}?@";
+    }
 
+    if (passwordChart.length === 0) {
+      alert("Lütfen en az bir karakter seti seçin.");
+      return;
+    }
 
-    console.log(password_chart);
-    // console.log(pasword_lenght);
+    let password = "";
+
+    for (let i = 0; i < passwordLength; i++) {
+      let randomIndex = Math.floor(Math.random() * passwordChart.length);
+      password += passwordChart[randomIndex];
+    }
+
+    document.getElementById("result").innerHTML = password + "<input type='button' id=''copy value='hello'>";
 }
